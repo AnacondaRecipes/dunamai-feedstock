@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core 1.4.0
+    - poetry-core 1.5.1
     - python
     - setuptools
     - wheel
