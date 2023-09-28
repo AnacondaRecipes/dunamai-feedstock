@@ -11,7 +11,7 @@ source:
   sha256: 459381b585a1e78e4070f0d38a6afb4d67de2ee95064bf6b0438ec620dde0820
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   entry_points:
@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core 1.5.1
+    - poetry-core 1.5
     - python
     - setuptools
     - wheel
