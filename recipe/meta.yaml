@@ -41,8 +41,7 @@ test:
     - pip check
     - dunamai --help
     # Skip tests expecting 'master' default branch; modern Git defaults to 'main'
-    - pytest tests -k "not test__version__from_git__with_lightweight_tags and not test__version__from_git__with_mixed_tags and not test__version__from_git__with_nonchronological_commits and not test__version__from_git__gitflow and not test__version__from_git__exclude_decoration and not test__version__from_git__broken_ref"  # [osx and py>=313]
-    - pytest tests # [not (osx and py>=313)]
+    - pytest tests -k "not test__version__from_git__with_lightweight_tags and not test__version__from_git__with_mixed_tags and not test__version__from_git__with_nonchronological_commits and not test__version__from_git__gitflow and not test__version__from_git__exclude_decoration and not test__version__from_git__broken_ref"
 
 about:
   home: https://github.com/mtkennerly/dunamai
