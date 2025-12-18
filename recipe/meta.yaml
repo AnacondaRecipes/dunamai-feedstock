@@ -39,7 +39,8 @@ test:
   commands:
     - pip check
     - dunamai --help
-    - pytest tests -v
+    #  Skip test_dunamai.py: RuntimeError: The command 'git commit --no-gpg-sign -m Initial' returned code 128.
+    - pytest tests -v --ignore=tests/integration/test_dunamai.py
 
 about:
   home: https://github.com/mtkennerly/dunamai
