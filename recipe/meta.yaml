@@ -30,11 +30,16 @@ requirements:
 test:
   imports:
     - dunamai
+  source_files:
+    - tests
   requires:
     - pip
+    - pytest
+    - git
   commands:
     - pip check
     - dunamai --help
+    - pytest tests -v
 
 about:
   home: https://github.com/mtkennerly/dunamai
