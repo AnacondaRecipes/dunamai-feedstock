@@ -1,5 +1,5 @@
 {% set name = "dunamai" %}
-{% set version = "1.24.1" %}
+{% set version = "1.25.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3aa3348f77242da8628b23f11e89569343440f0f912bcef32a1fa891cf8e7215
+  sha256: a7f8360ea286d3dbaf0b6a1473f9253280ac93d619836ad4514facb70c0719d1
 
 build:
   number: 0
@@ -20,10 +20,8 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core 1.5
+    - poetry-core >=1.0.0
     - python
-    - setuptools
-    - wheel
   run:
     - importlib-metadata >=1.6.0  # [py<38]
     - packaging >=20.9
@@ -32,11 +30,17 @@ requirements:
 test:
   imports:
     - dunamai
+  source_files:
+    - tests
   requires:
     - pip
+    - pytest
+    - git
   commands:
     - pip check
     - dunamai --help
+    #  Skip test_dunamai.py: RuntimeError: The command 'git commit --no-gpg-sign -m Initial' returned code 128.
+    - pytest tests -v --ignore=tests/integration/test_dunamai.py
 
 about:
   home: https://github.com/mtkennerly/dunamai
