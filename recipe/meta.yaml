@@ -1,14 +1,13 @@
 {% set name = "dunamai" %}
-{% set version = "1.25.0" %}
-
+{% set version = "1.26.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a7f8360ea286d3dbaf0b6a1473f9253280ac93d619836ad4514facb70c0719d1
+  sha256: 84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c
 
 build:
   number: 0
@@ -40,18 +39,18 @@ test:
     - pip check
     - dunamai --help
     #  Skip test_dunamai.py: RuntimeError: The command 'git commit --no-gpg-sign -m Initial' returned code 128.
-    - pytest tests -v --ignore=tests/integration/test_dunamai.py
+    - pytest tests -vv --ignore=tests/integration/test_dunamai.py
 
 about:
   home: https://github.com/mtkennerly/dunamai
-  dev_url: https://github.com/mtkennerly/dunamai
-  doc_url: https://github.com/mtkennerly/dunamai
   summary: Dynamic versioning library and CLI
   description: |
     Dunamai is a Python library and command line tool for producing dynamic, standards-compliant version strings, derived from tags in your version control system. This facilitates uniquely identifying nightly or per-commit builds in continuous integration and releasing new versions of your software simply by creating a tag.
   license: MIT
   license_family: MIT
   license_file: LICENSE
+  dev_url: https://github.com/mtkennerly/dunamai
+  doc_url: https://github.com/mtkennerly/dunamai
 
 extra:
   recipe-maintainers:
