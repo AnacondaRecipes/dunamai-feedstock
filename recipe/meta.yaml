@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - poetry-core
+    - poetry-core >=1.0.0
     - python
   run:
     - importlib-metadata >=1.6.0  # [py<38]
